@@ -1,15 +1,21 @@
-workflows:
-  flutter-workflow:
-    name: Flutter Workflow
-    instance_type: mac_mini_m1  # Specify the instance type (mac, linux, windows)
-    environment:
-      flutter: stable  # Use stable version of Flutter
-    scripts:
-      - name: Install dependencies
-        script: flutter pub get
-      - name: Run tests
-        script: flutter test
-      - name: Build APK
-        script: flutter build apk --release
-      - name: Build iOS
-        script: flutter build ios --release
+name: your_project_name
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  http: ^0.14.0  # Make sure all dependencies have compatible versions
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
