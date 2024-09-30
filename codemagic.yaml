@@ -1,0 +1,15 @@
+workflows:
+  flutter-workflow:
+    name: Flutter Workflow
+    instance_type: mac_mini_m1  # Specify the instance type (mac, linux, windows)
+    environment:
+      flutter: stable  # Use stable version of Flutter
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Run tests
+        script: flutter test
+      - name: Build APK
+        script: flutter build apk --release
+      - name: Build iOS
+        script: flutter build ios --release
